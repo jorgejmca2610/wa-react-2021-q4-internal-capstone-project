@@ -1,27 +1,26 @@
 import React from 'react'
-import { FaShoppingCart, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import { IoStorefront } from 'react-icons/io5';
-
 
 export default function Header() {
     return (
-        <nav>
-            <div className="logo"><IoStorefront />
+        <div className="grid-header">
+            <div className="logo text-white">
+                <IoStorefront />
                 Wize Store
             </div>
-                <form action="/" method="get">
-                    <label htmlFor="header-search">
-                        <span className="visually-hidden">Search Products</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="header-search"
-                        placeholder="Search Products"
-                        name="s" 
-                    />
-                    <FaSearch />
+            <div className="search-bar">
+                <form role="search">
+                    <input id="search" type="search" className="pt-2" placeholder="Search..." />
+                    <button className="pt-1" type="submit"><FaSearch /></button>    
                 </form>
-                <FaShoppingCart />
-        </nav>
+            </div>
+            <div className="shopping-cart">
+                <button type="button" className="shopping-cart-button float-right" data-toggle="shopping-cart-dropdown">
+                    <i className="fa fa-shopping-cart"></i>
+                    <span className="text">Shopping Cart</span>
+                </button>
+            </div>
+        </div>
     )
 }

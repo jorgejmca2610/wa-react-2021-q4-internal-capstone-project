@@ -18,26 +18,27 @@ const Slider = ({ slides }) => {
   }
 
   return (
-    <section className='slider'>
-      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
-      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
-      {slides.map((slide, index) => {
-        return (
-          <div
-            className={index === current ? 'slide active' : 'slide'}
-            key={index}
-          >
-            {index === current && (
-              <div>
-                <p className='text_white'>{slide.text}</p>
-                <img src={slide.image} alt={slide.alt} width={slide.width} height={slide.height} className='image'/>
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </section>
-  );
-};
+    <div className="grid-slider">
+      <div className='slider'>
+        <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
+        <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+        {slides.map((slide, index) => {
+          return (
+            <div
+              className={index === current ? 'slide active' : 'slide'}
+              key={index} >
+              {index === current && (
+                <div>
+                  <p className='text_white'>{slide.text}</p>
+                  <img src={slide.image} alt={slide.alt} className='image'/>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 export default Slider;

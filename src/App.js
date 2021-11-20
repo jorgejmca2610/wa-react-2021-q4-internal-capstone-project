@@ -9,14 +9,24 @@ import { ProductCategoriesData } from './components/ProductCategoriesData';
 
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <Slider slides={FeatureBannersData} />;
-      <Slider slides={ProductCategoriesData} />;
-      <MainContent />
-      <Footer />
+    <div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></link>
+      {/* /* <div className="container">
+        <Header />
+        <Slider slides={FeatureBannersData} />;
+        <Slider slides={ProductCategoriesData} />;
+        <MainContent />
+        <Footer />
+      </div> */}
+      <div className="grid-container">
+        <Header />
+        <Slider slides={FeatureBannersData} />
+        <Slider slides={ProductCategoriesData} />
+        <MainContent />
+        <Footer />
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
