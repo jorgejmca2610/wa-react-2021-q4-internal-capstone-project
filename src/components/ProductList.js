@@ -9,15 +9,9 @@ export default function ProductList() {
   
   return (
     <React.Fragment>
-      <Sidebar
-        setCategories={setCategories}
-        data={categoryData}
-        categoryList={categories}
-      />
-      <FilteredProducts 
-        data={productData} 
-        categories={categories} 
-        additionalClass='span-2-columns' />
+      <Sidebar setCategories={setCategories} data={categoryData} categoryList={categories} />
+      
+      <FilteredProducts data={productData} categories={categories} additionalClass='span-2-columns' />
     </React.Fragment>
   )
 }

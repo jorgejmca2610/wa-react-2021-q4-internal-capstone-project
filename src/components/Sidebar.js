@@ -9,9 +9,8 @@ export default function Sidebar(params) {
         <ul>
           { results.map((category) => {
             const selectedCategory = params.categoryList.some((item) => category.slugs.includes(item));
-            const className = selectedCategory ? "activeCategory" : "";
             return (
-              <li key={category.id} className={className} onClick={eventHandler} slug={category.slugs.join("_")}>
+              <li key={category.id} className={selectedCategory ? "activeCategory" : ""} onClick={handleCategoriesSelected} slug={category.slugs.join("_")}>
                   {category.data.name}
               </li>
             )
@@ -20,8 +19,8 @@ export default function Sidebar(params) {
     </div>
   )
 
-  function eventHandler(e) {
-    e.preventDefault();
+  // TBH: I found this solution in a youtube tutorial :( shame on me
+  function handleCategoriesSelected(e) {
     const tCat = e.target.attributes.slug.value.split("_");
     
     if (e.target.classList.contains("activeCategory")) {
@@ -30,7 +29,7 @@ export default function Sidebar(params) {
       });
       params.setCategories(filteredCategories);
     } else {
-      params.setCategories([...params.categoryList, ...tCat]);
+      params.setCategories([...tCat, ...params.categoryList, ]);
     }
   }
 }

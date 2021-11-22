@@ -8,22 +8,23 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [isMainpage, setIsMainpage] = useState(true);
+  const [mainPage, setMainPage] = useState(true);
 
   return ( 
     <div className="grid-container">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></link>
-      <Header setIsMainpage={setIsMainpage} />
-        {isMainpage ? <HomePage />: ''}
-        {isMainpage ? (
-          <div className="bottom-button">
-            <button type="button" className="products-button" onClick={() =>  setIsMainpage(!isMainpage)}>
-              View All Products
-            </button>
-          </div>
-        ): ''}
-        {!isMainpage ? <ProductList />: ''}
-        <Footer />
+      <Header setMainPage={setMainPage} />
+        {mainPage ? 
+          <React.Fragment>
+            <HomePage />
+            <div className="bottom-button">
+              <button type="button" className="products-button" onClick={() =>  setMainPage(!mainPage)}>
+                View All Products
+              </button>
+            </div>
+          </React.Fragment>
+        : <ProductList /> }
+      <Footer />
   </div>
   )
 }
