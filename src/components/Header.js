@@ -1,13 +1,12 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa';
-import { IoStorefront } from 'react-icons/io5';
+import logo from '../utilities/logo.png';
 
 export default function Header(params) {
     return (
         <div className="grid-header">
             <div className="logo text-white" onClick={() => params.setIsMainpage(true)}>
-                <IoStorefront />
-                Wize Store
+                <img src={logo} className="logo" alt="logo" />
             </div>
             <div className="search-bar">
                 <form role="search">
@@ -17,7 +16,6 @@ export default function Header(params) {
             </div>
             <div className="shopping-cart">
                 <button type="button" className="shopping-cart-button float-right" data-toggle="shopping-cart-dropdown">
-                    <i className="fa fa-shopping-cart"></i>
                     <span className="text">Shopping Cart</span>
                 </button>
             </div>

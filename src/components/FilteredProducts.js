@@ -9,10 +9,7 @@ const FilteredProducts = (params) => {
   
   const listItems = results
     .filter((item) => {
-      if (categories.length !== 0) {
-        return categories.includes(item.data.category.slug)
-      }
-      return true
+        return categories.length !== 0 ? categories.includes(item.data.category.slug) : true
     })
     .map((item) =>
       <div className="product-card" key={item.id}>
