@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react'
 
-import './App.css';
+import "./App.css";
 import HomePage from "./components/HomePage";
 import ProductList from "./components/ProductList"
-import Header from './components/Header';
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [isMainpage, setIsMainpage] = useState(true);
