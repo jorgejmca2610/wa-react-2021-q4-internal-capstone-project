@@ -5,8 +5,10 @@ import logo from '../utilities/logo.png';
 export default function Header(params) {
     return (
         <div className="grid-header">
-            <div className="logo text-white" onClick={() => params.setIsMainpage(true)}>
-                <img src={logo} className="logo" alt="logo" />
+            <div className="logo text-white">
+                <a href="/" onClick={() => params.setIsHomepage(true)}>
+                    <img src={logo} className="logo" alt="logo" />
+                </a>
             </div>
             <div className="search-bar">
                 <form role="search">
