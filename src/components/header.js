@@ -2,10 +2,10 @@ import React from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { IoStorefront } from 'react-icons/io5';
 
-export default function Header() {
+export default function Header(params) {
     return (
         <div className="grid-header">
-            <div className="logo text-white">
+            <div className="logo text-white" onClick={() => params.setIsMainpage(true)}>
                 <IoStorefront />
                 Wize Store
             </div>

@@ -1,6 +1,6 @@
-import featureProductsData from '../mocks/en-us/featured-products.json'
+import featureProductsDataJson from '../mocks/en-us/featured-products.json'
 
-export const FeatureProductsData = featureProductsData.results.map(result => (
+export const featureProductsData = featureProductsDataJson.results.map(result => (
   {
     text: 'Feature Products Grid',
     image: result.data.mainimage.url,
@@ -9,6 +9,6 @@ export const FeatureProductsData = featureProductsData.results.map(result => (
     alt: result.data.mainimage.alt,
     name: result.data.name,
     price: result.data.price,
-    category: result.data.category.slug
+    category: result.data.category.id
   }
 ));

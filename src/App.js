@@ -1,33 +1,30 @@
 import React from 'react';
-import './App.css';
-import Header from "./components/header";
-import MainContent from "./components/mainContent";
-import Footer from "./components/footer";
-import Slider from './components/Slider';
-import { FeatureBannersData } from './components/FeatureBannersData';
-import { ProductCategoriesData } from './components/ProductCategoriesData';
+import { useState } from 'react'
 
-function App() {
-  return (
-    <div>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></link>
-      {/* /* <div className="container">
-        <Header />
-        <Slider slides={FeatureBannersData} />;
-        <Slider slides={ProductCategoriesData} />;
-        <MainContent />
+import './App.css';
+import HomePage from "./components/HomePage";
+import ProductList from "./components/ProductList"
+import Header from './components/Header';
+import Footer from './components/Footer'
+
+export default function App() {
+  const [isMainpage, setIsMainpage] = useState(true);
+
+  return ( 
+    <div className="grid-container">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></link>
+      <Header setIsMainpage={setIsMainpage} />
+        {isMainpage ? <HomePage />: ''}
+        {isMainpage ? (
+          <div className="bottom-button">
+            <button type="button" className="products-button" onClick={() =>  setIsMainpage(!isMainpage)}>
+              View All Products
+            </button>
+          </div>
+        ): ''}
+        {!isMainpage ? <ProductList />: ''}
         <Footer />
-      </div> */}
-      <div className="grid-container">
-        <Header />
-        <Slider slides={FeatureBannersData} />
-        <Slider slides={ProductCategoriesData} />
-        <MainContent />
-        <Footer />
-      </div>
-    </div>
+  </div>
   )
 }
-
-export default App;
 

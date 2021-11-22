@@ -1,6 +1,6 @@
-import featuredBannersData from '../mocks/en-us/featured-banners.json'
+import featuredBannersDataJson from '../mocks/en-us/featured-banners.json'
 
-export const FeatureBannersData = featuredBannersData.results.map(result => (
+export const featureBannersData = featuredBannersDataJson.results.map(result => (
   {
     text: 'Feature Banners Slider',
     image: result.data.main_image.url,

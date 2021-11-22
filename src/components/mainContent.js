@@ -1,8 +1,9 @@
 import React from 'react'
-import { FeatureProductsData } from './FeatureProductsData';
+import { featureProductsData } from '../utilities/featureProductsData'
 
-const MainContent = () => {
-    const listItems = FeatureProductsData.map((item) =>
+const MainContent = ({additionalClass = ''}) => {
+    const customClassName = `grid-product-list ${additionalClass}`
+    const listItems = featureProductsData.map((item) =>
         <div className="product-card" key={item.id}>
             <div className="card_img" key={item.id}>
                 <img className="product-img" src={item.image} alt={item.alt}/>
@@ -14,7 +15,7 @@ const MainContent = () => {
         </div>
     )
     return (
-        <div className="grid-product-list">
+        <div className={customClassName}>
             {listItems}
         </div>
     )
