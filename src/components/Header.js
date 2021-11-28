@@ -2,11 +2,11 @@ import React from 'react'
 import { FaSearch } from 'react-icons/fa';
 import logo from '../utilities/logo.png';
 
-export default function Header(data) {
+export default function Header({ setMainPage }) {
     return (
         <div className="grid-header">
             <div className="logo text-white">
-                <a href="/#" onClick={() => data.setMainPage(true)}>
+                <a href="/#" onClick={() => setMainPage(true)}>
                     <img src={logo} className="logo" alt="logo" />
                 </a>
             </div>

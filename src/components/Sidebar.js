@@ -21,15 +21,15 @@ export default function Sidebar(params) {
 
   // TBH: I found this solution in a youtube tutorial :( shame on me
   function handleCategoriesSelected(e) {
-    const tCat = e.target.attributes.slug.value.split("_");
+    const selectedCategories = e.target.attributes.slug.value.split("_");
     
     if (e.target.classList.contains("activeCategory")) {
       const filteredCategories = params.categoryList.filter((category) => {
-        return !tCat.includes(category);
+        return !selectedCategories.includes(category);
       });
       params.setCategories(filteredCategories);
     } else {
-      params.setCategories([...tCat, ...params.categoryList, ]);
+      params.setCategories([...selectedCategories, ...params.categoryList, ]);
     }
   }
 }

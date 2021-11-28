@@ -1,10 +1,8 @@
 import React from 'react'
 import Pagination from './Pagination'
 
-const FilteredProducts = (params) => {
-  const { results } = params.data
-  const { categories = [] } = params
-  const { additionalClass } = params
+const FilteredProducts = ({data, categories = [], additionalClass}) => {
+  const { results } = data
   const customClassName = `grid-product-list ${additionalClass}`
   
   const listItems = results
@@ -23,12 +21,12 @@ const FilteredProducts = (params) => {
       </div>
     )
   return (
-    <React.Fragment>
+    <>
       <div className={customClassName}>
           {listItems}
-          <Pagination/>
+          <Pagination listItems={listItems}/>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 export default FilteredProducts;

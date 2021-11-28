@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react'
+import React, { useState }  from 'react';
 
 import "./App.css";
 import HomePage from "./components/HomePage";
@@ -15,14 +14,14 @@ export default function App() {
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"></link>
       <Header setMainPage={setMainPage} />
         {mainPage ? 
-          <React.Fragment>
+          <>
             <HomePage />
             <div className="bottom-button">
               <button type="button" className="products-button" onClick={() =>  setMainPage(!mainPage)}>
                 View All Products
               </button>
             </div>
-          </React.Fragment>
+          </>
         : <ProductList /> }
       <Footer />
   </div>
